@@ -1,0 +1,222 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+  <h1> Fra and Data stat</h1>
+
+
+    <p><b>Fast Recovery Area Status</b> </p>
+
+  <hr>
+
+
+
+
+     <!--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Fast Recovery Area Status</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>NAME</th>
+        <th>SPACE_LIMIT_MB</th>
+      <th>SPACE_USED_MB</th>
+      <th> SPACE_RECLAIMABLE_MB</th>
+      <th>NUMBER_OF_FILEs</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data%}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+                                <td>{{  row[2] }}</td>
+                                <td>{{  row[3] }}</td>
+                                <td>{{  row[4] }}</td>
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                   <th>NAME</th>
+        <th>SPACE_LIMIT_MB</th>
+      <th>SPACE_USED_MB</th>
+      <th> SPACE_RECLAIMABLE_MB</th>
+      <th>NUMBER_OF_FILEs</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+ <!--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Recovery Area Usage</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>File_Type</th>
+        <th>Percent_Space_used</th>
+        <th>Percent_space_reclaiamable</th>
+        <th>No_of_files</th>
+        <th>Con_id</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data1 %}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+                                <td>{{  row[2] }}</td>
+                                <td>{{  row[3] }}</td>
+                               <td>{{  row[4] }}</td>
+
+
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                   <th>File_Type</th>
+        <th>Percent_Space_used</th>
+        <th>Percent_space_reclaiamable</th>
+        <th>No_of_files</th>
+        <th>Con_id</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+
+  !--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Datafile Usage</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example3" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>TABLESPACE_NAME</th>
+        <th>DATAFILE</th>
+        <th>SIZE_IN_MB</th>
+        <th>MAX_SIZE_MB</th>
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data2 %}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+                                <td>{{  row[2] }}</td>
+                                <td>{{  row[3] }}</td>
+
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>TABLESPACE_NAME</th>
+        <th>DATAFILE</th>
+        <th>SIZE_IN_MB</th>
+        <th>MAX_SIZE_MB</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+{#   <!--start-->#}
+{#          <div class="box">#}
+{#            <div class="box-header">#}
+{#              <h3 class="box-title">archive log size each of day/hour</h3>#}
+{#            </div>#}
+{#            <!-- /.box-header -->#}
+{#            <div class="box-body">#}
+{#              <table id="example4" class="table table-bordered table-hover">#}
+{#                <thead>#}
+{#                <tr>#}
+{#                  <th>INST_ID</th>#}
+{#        <th>RECID</th>#}
+{#        <th>NAME</th>#}
+{#        <th>TIME</th>#}
+{#        <th>ARCHIVAL_THREAD</th>#}
+{#        <th>BLOCKS</th>#}
+{##}
+{#                </tr>#}
+{#                </thead>#}
+{#                <tbody>#}
+{#                  {% for row in data3 %}#}
+{#                    <tr>#}
+{#                                <td>{{ row[0] }}</td>#}
+{#                                <td>{{  row[1] }}</td>#}
+{#                                <td>{{  row[2] }}</td>#}
+{#                                <td>{{  row[3] }}</td>#}
+{#                                <td>{{  row[4] }}</td>#}
+{#                                <td>{{  row[5] }}</td>#}
+{##}
+{##}
+{##}
+{#                    </tr>#}
+{##}
+{#                  {% endfor %}#}
+{##}
+{#                </tbody>#}
+{#                <tfoot>#}
+{#                <tr>#}
+{#                 <th>INST_ID</th>#}
+{#        <th>RECID</th>#}
+{#        <th>NAME</th>#}
+{#        <th>TIME</th>#}
+{#        <th>ARCHIVAL_THREAD</th>#}
+{#        <th>BLOCKS</th>#}
+{#                </tr>#}
+{#                </tfoot>#}
+{#              </table>#}
+{#            </div>#}
+{#            <!-- /.box-body -->#}
+{#          </div>#}
+{#          <!-- /.box -->#}
+{#         <!--end -- >#}
+
+
+
+
+
+{% endblock %}

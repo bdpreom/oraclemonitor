@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="@10.10.10.11" uuid="34ad3919-1c5e-422e-98ae-8074d7fc24d8">
+      <database-info product="Oracle" version="Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production&#10;With the Partitioning, Real Application Clusters, Automatic Storage Management, OLAP,&#10;Data Mining and Real Application Testing options" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0" dbms="ORACLE" exact-version="11.2.0.1.0">
+        <extra-name-characters>$#</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>evr</user-name>
+      <introspection-schemas>*:EVR</introspection-schemas>
+    </data-source>
+    <data-source name="192.168.5.120" uuid="3f044207-6c11-45d6-bf90-d1ad0054dd9d">
+      <database-info product="Oracle" version="Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0" dbms="ORACLE" exact-version="12.2.0.1.0">
+        <extra-name-characters>$#</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>sys as sysdba</user-name>
+      <introspection-schemas>*:SYS</introspection-schemas>
+    </data-source>
+  </component>
+</project>

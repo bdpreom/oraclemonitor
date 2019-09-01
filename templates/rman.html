@@ -1,0 +1,182 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+  <h1>Rman stat</h1>
+
+
+    <p><b>RMAN backup status along with start and stop timing</b> </p>
+
+  <hr>
+
+
+
+
+     <!--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">RMAN backup status along with start and stop timing</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                   <th>SESSION_KEY</th>
+        <th>INPUT_TYPE</th>
+      <th>STATUS</th>
+      <th>START_TIME</th>
+      <th>END_TIME</th>
+      <th>HRS</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data%}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+                                <td>{{  row[2] }}</td>
+                                <td>{{  row[3] }}</td>
+                                <td>{{  row[4] }}</td>
+                                 <td>{{  row[5] }}</td>
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                     <th>SESSION_KEY</th>
+        <th>INPUT_TYPE</th>
+      <th>STATUS</th>
+      <th>START_TIME</th>
+      <th>END_TIME</th>
+      <th>HRS</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+ <!--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">RMAN backup currently running</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                   <th>SID</th>
+        <th>SERIAL NO</th>
+        <th>CONTEXT</th>
+        <th>SO_FAR_COMPLETED</th>
+        <th>TOTALWORK</th>
+        <th>COMPLTE %</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data1 %}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+                                <td>{{  row[2] }}</td>
+                                <td>{{  row[3] }}</td>
+                                <td>{{  row[4] }}</td>
+                                <td>{{  row[5] }}</td>
+
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>SID</th>
+        <th>SERIAL NO</th>
+        <th>CONTEXT</th>
+        <th>SO_FAR_COMPLETED</th>
+        <th>TOTALWORK</th>
+        <th>COMPLTE %</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+
+  !--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">historical backup status</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example3" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>SESSION_KEY</th>
+        <th>INPUT_TYPE</th>
+        <th>STATUS</th>
+        <th>RMAN_BKUP_START_TIME</th>
+        <th>RMAN_BKUP_END_TIME</th>
+        <th>HRS</th>
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data2 %}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+                                <td>{{  row[2] }}</td>
+                                <td>{{  row[3] }}</td>
+                                <td>{{  row[4] }}</td>
+                                 <td>{{  row[5] }}</td>
+
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>SESSION_KEY</th>
+        <th>INPUT_TYPE</th>
+        <th>STATUS</th>
+        <th>RMAN_BKUP_START_TIME</th>
+        <th>RMAN_BKUP_END_TIME</th>
+        <th>HRS</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+
+
+
+
+
+
+{% endblock %}

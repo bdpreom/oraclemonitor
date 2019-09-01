@@ -1,0 +1,122 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+  <h1>Alert Logs</h1>
+
+
+    <p><b>Log file locations</b> </p>
+
+  <hr>
+
+
+
+
+     <!--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Log file locations</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                 <th>INST_ID</th>
+                 <th>NAME</th>
+                  <th>VALUE</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data1 %}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+                                <td>{{  row[2] }}</td>
+
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                   <th>INST_ID</th>
+                   <th>NAME</th>
+                   <th>VALUE</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+
+
+  !--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Alert logs view</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example3" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>HOST ID</th>
+                  <th>RECORD_ID</th>
+                  <th>ERROR_INSTANCE_ID</th>
+                  <th>ERROR_INSTANCE_SEQ</th>
+                  <th>TIMESTAMP</th>
+                   <th>MESSAGE</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data2 %}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+                                <td>{{  row[2] }}</td>
+                                <td>{{  row[3] }}</td>
+                                <td>{{  row[4] }}</td>
+                                 <td>{{  row[5] }}</td>
+
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>HOST ID</th>
+                  <th>RECORD_ID</th>
+                  <th>ERROR_INSTANCE_ID</th>
+                  <th>ERROR_INSTANCE_SEQ</th>
+                  <th>TIMESTAMP</th>
+                   <th>MESSAGE</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+
+
+
+
+
+
+{% endblock %}

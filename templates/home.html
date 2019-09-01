@@ -1,0 +1,118 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <p class="lead">Oracle Monitoring</p>
+
+
+
+
+  </div>
+
+
+  <h1>Database status</h1>
+        <p><b>basic info</b> </p>
+
+  <hr>
+
+ <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+
+        <!--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">basic info</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+
+                    <th>DB_UNIQUE_NAME</th>
+                    <th>LOG_MODE</th>
+                    <th>FLASHBACK_ON</th>
+                    <th>DATABASE_ROLE</th>
+                     <th>UPTIME</th>
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data %}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+                                <td>{{  row[2] }}</td>
+                                <td>{{  row[3] }}</td>
+                                <td>{{  row[4] }}</td>
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                   <th>DB_UNIQUE_NAME</th>
+        <th>LOG_MODE</th>
+      <th>FLASHBACK_ON</th>
+      <th>DATABASE_ROLE</th>
+      <th>UPTIME</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+
+          <!--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">machine info</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>STAT_NAME</th>
+                  <th>VALUE</th>
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data1 %}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>STAT_NAME</th>
+                    <th>VALUE</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+
+
+
+{% endblock %}

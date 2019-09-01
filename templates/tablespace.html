@@ -1,0 +1,267 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+  <h1>Tablespace status</h1>
+
+
+    <p><b>Temporary Tablespace</b> </p>
+
+  <hr>
+
+
+
+
+     <!--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Temporary Tablespace</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                 <th>TABLESPACE_NAME</th>
+        <th>SIZE_IN_MB</th>
+      <th> USED_SPACE_IN_MB</th>
+      <th> FREE_SPACE_IN_MB</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data%}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+                                <td>{{  row[2] }}</td>
+                                <td>{{  row[3] }}</td>
+
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                   <th>TABLESPACE_NAME</th>
+        <th>SIZE_IN_MB</th>
+      <th> USED_SPACE_IN_MB</th>
+      <th> FREE_SPACE_IN_MB</th>
+
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+ <!--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">All Tablespace</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                     <th>TABLESPACE_NAME</th>
+        <th>USED_MB</th>
+        <th>FREE_MB</th>
+         <th>TOTAL_MB</th>
+         <th>PCT_FREE</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data1 %}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+                                <td>{{  row[2] }}</td>
+                                <td>{{  row[3] }}</td>
+                                <td>{{  row[4] }}</td>
+
+
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                      <th>TABLESPACE_NAME</th>
+        <th>USED_MB</th>
+        <th>FREE_MB</th>
+         <th>TOTAL_MB</th>
+         <th>PCT_FREE</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+
+  !--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Users Default Tablespace</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example3" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <<th>Username</th>
+        <th>Default_tablespace</th>
+        <th>Temporary_tablespace</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data2 %}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+                                <td>{{  row[2] }}</td>
+
+
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                 <th>Username</th>
+        <th>Default_tablespace</th>
+        <th>Temporary_tablespace</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+   <!--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Users Space Usage</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example4" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>owner</th>
+        <th>tablespace_name</th>
+        <th>size in mb</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data3 %}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+                                <td>{{  row[2] }}</td>
+
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>owner</th>
+        <th>tablespace_name</th>
+        <th>size in mb</th>
+
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+ <!--start-->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Tablespace Quota</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>TABLESPACE_NAME</th>
+        <th>USERNAME</th>
+        <th>SIZE IN MB</th>
+        <th>BLOCKS</th>
+        <th>QUOTA ON SPACE</th>
+        <th>QUOTA ON BLOCKS</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                  {% for row in data4 %}
+                    <tr>
+                                <td>{{ row[0] }}</td>
+                                <td>{{  row[1] }}</td>
+                                <td>{{  row[2] }}</td>
+                                <td>{{ row[4] }}</td>
+                                <td>{{  row[5] }}</td>
+                                <td>{{  row[6] }}</td>
+
+
+
+                    </tr>
+
+                  {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+         <th>TABLESPACE_NAME</th>
+        <th>USERNAME</th>
+        <th>SIZE IN MB</th>
+        <th>BLOCKS</th>
+        <th>QUOTA ON SPACE</th>
+        <th>QUOTA ON BLOCKS</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+         <!--end -- >
+
+
+
+
+
+{% endblock %}
